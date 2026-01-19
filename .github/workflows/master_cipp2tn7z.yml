@@ -14,10 +14,10 @@ env:
 
 jobs:
   build-and-deploy:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
       - name: 'Checkout GitHub Action'
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: 'Run Azure Functions Action'
         uses: Azure/functions-action@v1
@@ -27,3 +27,4 @@ jobs:
           slot-name: 'Production'
           package: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_2D51E6AAA1F34E3AAE9FDDF886A9664B }}
+
