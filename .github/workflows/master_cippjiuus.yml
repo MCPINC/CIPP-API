@@ -2,11 +2,8 @@
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
 name: Build and deploy Powershell project to Azure Function App - cippjiuus
-
+#Edited to prevent autorun.
 on:
-  push:
-    branches:
-      - master
   workflow_dispatch:
 
 env:
@@ -27,4 +24,5 @@ jobs:
           app-name: 'cippjiuus'
           slot-name: 'Production'
           package: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
+
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_E2C0118215FF474E9A6386578DD008AD }}
